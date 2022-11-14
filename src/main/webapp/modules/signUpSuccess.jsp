@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입 성공</title>
-<link rel="stylesheet" href="/finalproject/index.css">
+<link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
 	<%@ include	file="/modules/top.jsp" %>
@@ -14,7 +14,7 @@
 		<div id="signUpSC">
 			<div class="signUpBigTxt">회원가입 완료</div>
 			<div class="signUpSmallTxt">ㅇㅇ님, 환영합니다. 로그인 페이지로 이동해주세요.</div>
-			<input type="button" value="로그인 페이지로" class="loginBtn" onclick="location.href='/finalproject/modules/loginForm.jsp'">
+			<input type="button" value="로그인 페이지로" class="loginBtn" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
 		</div>
 		
 		<div class="push"></div>

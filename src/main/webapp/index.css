@@ -19,17 +19,19 @@ section{
 	top: 80px;
 	margin: auto;
 }
+
 .push{
 	height: 100px;
 }
+
 footer {
 	background-color: #D2DDE7;
 	height: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
 }
+
 #navi{
 	position: fixed;
 	left: 0;
@@ -39,5 +41,4 @@ footer {
 	height: 100%;
 	margin: auto;
 	background-color: #344A59;
-	
 }

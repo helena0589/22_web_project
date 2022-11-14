@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>footer</title>
-<link rel="stylesheet" href="/finalproject/index.css">
+<link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
 	<footer>

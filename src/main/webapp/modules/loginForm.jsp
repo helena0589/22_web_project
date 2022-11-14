@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link rel="stylesheet" href="/finalproject/index.css">
+<link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
 	<%@ include	file="/modules/top.jsp" %>
@@ -30,7 +30,7 @@
 		<div id="signUpBox" >
 			<div class="signInBigTxt">회원가입</div>
 			만약 회원이 아니시라면?<br>
-			<input type="button" value="회원가입 하러가기" class="loginBtn" onclick="location.href='/finalproject/modules/signUpForm.jsp'">
+			<input type="button" value="회원가입 하러가기" class="loginBtn" onclick="location.href='/22_web_project/modules/signUpForm.jsp'">
 		</div>
 	</div>
 	</main>	

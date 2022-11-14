@@ -4,16 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="/finalproject/js/jquery-3.6.1.js"></script>
+<script src="/22_web_project/js/jquery-3.6.1.js"></script>
 <title>Insert title here</title>
-<link rel="stylesheet" href="/finalproject/index.css">
+<link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
 	<ion-icon name="menu-outline" id ="openNavBtn" class="icon"></ion-icon>
 	<ion-icon name="close-outline" id ="closeNavBtn" class="icon" style="display: none; color: #fff;"></ion-icon>
 	<nav>
 		<div id="navi" style="display: none;">
-			<div id="signInBox" onclick="location.href='/finalproject/modules/loginForm.jsp'">
+			<div id="signInBox" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
 				<ion-icon name="lock-closed" class="signInTxt"></ion-icon>
 				<div class="signInTxt">Login Page</div>
 			</div>

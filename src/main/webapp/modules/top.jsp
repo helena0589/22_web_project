@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
 <header>
 	<div id="logo">
-		<img src="/finalproject/rcs/logo.png" style="height: 70px;" onclick="location.href='/finalproject/index.jsp'">
+		<img src="/22_web_project/rcs/logo.png" style="height: 70px;" onclick="location.href='/22_web_project/index.jsp'">
 	</div>
 	<div id="cart">
 		<ion-icon name="cart-outline" class="cartIcon"></ion-icon>
