@@ -84,7 +84,6 @@
 	width: 620px;
 	height: 70px;
 	font-size: 20pt;
-	font-weight: bold;
 	background-color: #525252;
 	color: #fff;
 	border: 3px solid #525252;

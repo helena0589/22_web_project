@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>회원정보 수정</title>
 <link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 		<div id="signUpBox">
 			<div class="signUpBigOne">
 				<div class="signUpBigTxt">아이디</div>
-				<input type="text" class="loginInputBox" name="memberid" placeholder="아이디를 입력하세요" >
+				아이디는 고정
 			</div>
 			<div class="signUpBigOne">
 				<div class="signUpBigTxt">비밀번호</div>
@@ -77,10 +77,12 @@
   					<option value="3">3학년</option>
 				</select>
 			</div>
-			<div id="acceptOne">
-				<input type="checkbox" name="acceptBox">약관에 동의합니다.
+			<div class="editProfileBtn">
+				<input type="submit" value="회원정보 수정" name="editProfile" class="loginBtn">
 			</div>
-			<input type="submit" value="다음으로" name="signUpInputBox" class="loginBtn">
+			<div class="editProfileBtn" style="margin-bottom: 200px;">
+				<input type="submit" value="회원정보 삭제" name="deleteProfile" class="loginBtn2">
+			</div>
 		</div>
 	</div>
 	</main>	
@@ -125,20 +127,30 @@
 	border: 3px solid #525252;
 	border-radius: 10px;
 }
-
 .loginBtn:hover{
 	background-color: rgba(0,0,0,0);
 	color:#525252;
 	transition-duration: 0.5s;
 }
-
-#signUpBox .loginBtn{
-	margin-bottom: 200px;
+.loginBtn2{
+	margin-top: 30px;
+	width: 620px;
+	height: 70px;
+	font-size: 20pt;
+	background-color: #983833;
+	color: #fff;
+	border: 3px solid #983833;
+	border-radius: 10px;
 }
-
+.loginBtn2:hover{
+	background-color: rgba(0,0,0,0);
+	color:#983833;
+	transition-duration: 0.5s;
+}
 #acceptOne{
 	margin-top: 30px;
 	font-size: 15pt;
 }
+
 </style>
 </html>

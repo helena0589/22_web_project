@@ -23,11 +23,11 @@
 						<a href="#"><span style="font-size: 35pt;">전공서적</span></a>
 						<div id="departmentCa">
 							<div class="deparList"><a href="#">-기계공학부</a></div>
-							<a href="#">-로봇자동화공학부</a>
-							<a href="#">-전기전자통신공학부</a>
-							<a href="#">-컴퓨터공학부</a>
-							<a href="#">-생활환경공학부</a>
-							<a href="#">-경영학부</a>
+							<div class="deparList"><a href="#">-로봇자동화공학부</a></div>
+							<div class="deparList"><a href="#">-전기전자통신공학부</a></div>
+							<div class="deparList"><a href="#">-컴퓨터공학부</a></div>
+							<div class="deparList"><a href="#">-생활환경공학부</a></div>
+							<div class="deparList"><a href="#">-경영학부</a></div>
 						</div>
 					</div>
 				</li>
@@ -84,6 +84,9 @@
 }
 #departmentBox:hover #departmentCa{
 	display: block;
+}
+.deparList{
+	margin-top: 20px;
 }
 </style>
 </html>
