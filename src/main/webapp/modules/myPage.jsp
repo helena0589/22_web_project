@@ -4,99 +4,110 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이 페이지</title>
+<title>회원정보</title>
 </head>
 <body>
 	<%@ include	file="/modules/top.jsp" %>
 	<%@ include	file="/modules/nav.jsp" %>
 	<main>
-		<div class="twoContents">
-			<div class="oneContents" onclick="location.href='/22_web_project/modules/myProfile.jsp'">
+	<div id="wrapper">
+		<div class="mainTitle">MYPAGE</div>
+		<div class="mainSmallTitle">회원정보</div>
+		<div class="myPageTwoBox">
+			<div class="myPageOneBox" onclick="location.href='/22_web_project/modules/myProfile.jsp'">
 				<ion-icon name="person-outline" class="myPageIcon"></ion-icon>
-				<div class="myPageTxt">profile</div>
-				<div class="korMyPageTxt">―내 정보―</div>
+				<div class="myPageBigTxt">Profile</div>
+				<div class="myPageSmallTxt">회원정보</div>
 			</div>
-			<div class="oneContents" onclick="location.href='/22_web_project/modules/myOrder.jsp'">
+			<div class="myPageOneBox" onclick="location.href='/22_web_project/modules/myOrder.jsp'">
 				<ion-icon name="receipt-outline" class="myPageIcon"></ion-icon>
-				<div class="myPageTxt">my order</div>
-				<div class="korMyPageTxt">―내 주문내역―</div>
+				<div class="myPageBigTxt">My Order</div>
+				<div class="myPageSmallTxt">주문내역</div>
 			</div>
 		</div>
-		<div class="btnContents">
-			<input type="submit" value="logout" name="logoutBtn" class="loginBtn">
+		<div class="myPageTwoBox">
+				<div class="myPageOneBox" onclick="location.href='/22_web_project/modules/myProfile.jsp'">
+				<ion-icon name="people-outline" class="myPageIcon"></ion-icon>
+				<div class="myPageBigTxt">Member list</div>
+				<div class="myPageSmallTxt">회원정보</div>
+			</div>
+			<div class="myPageOneBox" onclick="location.href='/22_web_project/modules/myOrder.jsp'">
+				<ion-icon name="reader-outline" class="myPageIcon"></ion-icon>
+				<div class="myPageBigTxt">All orders</div>
+				<div class="myPageSmallTxt">주문내역</div>
+			</div>
 		</div>
+		<div id="logout">
+			<input type="submit" class="logoutBtn" value="LogOut">
+		</div>
+	</div>
 		<div class="push"></div>
 	</main>	
 	<%@ include	file="/modules/footer.jsp" %>
-
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 <style>
-.twoContents{
-	margin-top: 120px;
+.myPageTwoBox{
+	margin-top: 30px;
+	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 }
-.btnContents{
-	display: flex;
-	justify-content: center;
-	align-items: center;	
-}
-.oneContents{
-	margin: 0 30px 0 30px;
-	width: 400px;
-	height: 300px;
-	border: 4px solid #CFCFCF;
-	border-radius: 10px;
+.myPageOneBox{
+	width: 600px;
+	margin: 0 20px 0 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	border: 1px solid #CFCFCF;
 }
-.oneContents:hover{
-	color: #fff;
-	background-color: #CFCFCF;
-	transition-duration: 0.5s;
+.myPageOneBox:hover{
+	width: 600px;
+	margin: 0 20px 0 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #595959;
 }
 .myPageIcon{
+	margin-top: 20px;
 	font-size: 100pt;
+	color: #595959;
 }
-
-.myPageTxt{
-	font-size: 40pt;
-	color: #8F8F8F;
+.myPageBigTxt{
+	margin-top: 10px;
+	font-size: 50pt;
+	color: #595959;
 }
-
-.korMyPageTxt{
-	font-size: 20pt;
-	color: #8F8F8F;
+.myPageSmallTxt{
+	margin-top: 2px;
+	margin-bottom: 10px;
+	font-size: 25pt;
+	color: #595959;
 }
-.oneContents:hover .myPageTxt{
-	color: #000;
-	transition-duration: 0.5s;
+#logout{
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.oneContents:hover .korMyPageTxt{
-	color: #000;
-	transition-duration: 0.5s;
-}
-
-.loginBtn{
-	margin-top: 30px;
-	width: 920px;
-	height: 70px;
-	font-size: 20pt;
-	background-color: #525252;
+.logoutBtn{ 
+	width: 97%;
+	font-size: 15pt;
+	padding: 10px;
 	color: #fff;
-	border: 3px solid #525252;
+	border: solid 2px #595959;
+	background-color: #595959;
 	border-radius: 10px;
 }
-
-.loginBtn:hover{
-	background-color: rgba(0,0,0,0);
-	color:#525252;
+.logoutBtn:hover{
+	color: #595959;
+	background-color: #fff;
 	transition-duration: 0.5s;
 }
-
-
 </style>
 </html>

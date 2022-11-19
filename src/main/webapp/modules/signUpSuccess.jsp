@@ -11,12 +11,15 @@
 	<%@ include	file="/modules/top.jsp" %>
 	<%@ include	file="/modules/nav.jsp" %>
 	<main>
+	<div id="wrapper">
+		<div class="mainTitle">SIGNUP</div>
+		<div class="mainSmallTitle">회원가입</div>
 		<div id="signUpSC">
-			<div class="signUpBigTxt">회원가입 완료</div>
-			<div class="signUpSmallTxt">ㅇㅇ님, 환영합니다. 로그인 페이지로 이동해주세요.</div>
-			<input type="button" value="로그인 페이지로" class="loginBtn" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
+			<div class="signUpScTxt" style="font-size: 30pt; text-align: center; font-weight: bold; color: #000;">회원가입 성공했습니다!</div>
+			<div class="signUpScTxt" style="font-size: 15pt; text-align: left;">ㅇㅇ님, 환영합니다. 로그인 페이지로 이동해주세요.</div>
+			<input type="button" value="로그인 페이지로" class="signUpBtn" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
 		</div>
-		
+		</div>		
 		<div class="push"></div>
 	</main>
 	<%@ include	file="/modules/footer.jsp" %>
@@ -24,43 +27,32 @@
 
 <style>
 #signUpSC{
-	margin-top: 50px;
+	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
 }
-.signUpBigTxt{
-	margin-top: 40px;
-	font-size: 30pt;
-	font-weight: bold;
-	color: #000;
-	width: 620px;
-	text-align: left;
-}
-.signUpSmallTxt{
+.signUpScTxt{
 	margin-top: 20px;
+	color: #595959;
 	width: 620px;
-	text-align: left;
-	font-size: 15pt;
-	color: #737373;
 }
-.loginBtn{
-	margin-top: 100px;
-	width: 620px;
-	height: 70px;
-	font-size: 20pt;
-	font-weight: bold;
-	background-color: #525252;
+.signUpBtn{ 
+	width:620px;
+	margin-top: 150px;
+	margin-bottom: 200px;
+	font-size: 15pt;
+	padding: 10px;
 	color: #fff;
-	border: 3px solid #525252;
+	border: solid 2px #595959;
+	background-color: #595959;
 	border-radius: 10px;
 }
-
-.loginBtn:hover{
-	background-color: rgba(0,0,0,0);
-	color:#525252;
+.signUpBtn:hover{
+	color: #595959;
+	background-color: #fff;
 	transition-duration: 0.5s;
 }
 </style>

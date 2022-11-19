@@ -11,93 +11,101 @@
 	<%@ include	file="/modules/top.jsp" %>
 	<%@ include	file="/modules/nav.jsp" %>
 	<main>
-	<div id="login">
-		<div id="loginBox">
-			<div class="signInBigOne">
-				<div class="signInBigTxt">아이디</div>
-				<input type="text" class="loginInputBox" name="memberid" placeholder="아이디를 입력하세요" >
+		<div id="wrapper">
+			<div class="mainTitle">LOGIN</div>
+			<div class="mainSmallTitle">로그인</div>
+			<div id="loginBox">
+				<div id="loginTwoBox">
+					<div class="loginOneBox">
+						<div class="loginFormBox">
+							<div class="loginTitle">아이디</div>
+							<input type="text" class="loginInputBox" name="memberid" placeholder="아이디를 입력해주세요">
+							<div class="loginTitle">비밀번호</div>
+							<input type="text" class="loginInputBox" name="memberpw" placeholder="비밀번호를 입력해주세요">
+							<div id="loginCookie">
+								<input type="checkbox">로그인 정보 기억하기
+							</div>
+							<div id="serchingId">만약 아이디/비밀번호를 까먹었다면?</div>
+							<input type="submit" class="loginBtn" value="로그인">
+						</div>
+						
+					</div>
+					<div class="loginOneBox">
+						<div class="loginTitle">회원가입</div>
+						<p style="margin-top: 10px; margin-bottom: 227px; font-size: 15pt; color: #595959;">아직 회원이 아니신 분들은 여기로</p>
+						<input type="button" class="loginBtn" value="회원가입" onclick="location.href='/22_web_project/modules/signUpForm.jsp'">
+					</div>
+				</div>
+				
 			</div>
-			<div class="signInBigOne">
-				<div class="signInBigTxt">비밀번호</div>
-				<input type="text" class="loginInputBox" name="memberpw" placeholder="비밀번호를 입력하세요">
-			</div>
-			<div id="signInCoockie">
-				<input type="checkbox" name="loginCookie">
-				로그인 정보 기억하기
-			</div>
-			<input type="submit" value="login" name="loginInputBtn" class="loginBtn">
 		</div>
-		<div id="signUpBox" >
-			<div class="signInBigTxt">회원가입</div>
-			만약 회원이 아니시라면?<br>
-			<input type="button" value="회원가입 하러가기" class="loginBtn" onclick="location.href='/22_web_project/modules/signUpForm.jsp'">
-		</div>
-	</div>
 	</main>	
 	<%@ include	file="/modules/footer.jsp" %>
 </body>
 
 <style>
-
-#login{
-	margin-top: 50px;
+#loginBox{
+	margin-top: 20px;
+}
+#loginTwoBox{
+	display: flex;
+}
+.loginOneBox{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
+	width: 50%;
+	padding: 30px;
+	
 }
-.signInBigTxt{
-	margin-top: 50px;
-	font-size: 30pt;
-	font-weight: bold;
+.loginOneBox:first-child {
+	border: 3px solid #CFCFCF;
+	border-width: 0 3px 0 0;
 }
-.loginInputBox{
-	width: 600px;
-	margin-top: 10px;
-	font-size: 20pt;
-	padding: 10px;
-	border: 2px soild #ddd;
-	border-radius: 10px;	
+loginFormBox{
+	width: 90%;
 }
-
-#signInCoockie{
-	margin-top: 15px;
-	font-size: 15pt;
-}
-
-#signUpBox{
-	width: 610px;
+.loginTitle{
 	text-align: left;
+	margin-top: 20px;
+	font-size: 30pt;
+	color: #595959;
+}
+.loginInputBox[type="text"] { 
+	width: 95%;
+	margin-top: 10px;
 	font-size: 15pt;
-	color: #737373;
-}
-
-#signUpBox .signInBigTxt{
-	margin-top: 150px;
-	margin-bottom: 10px;
-	color: #000;
-}
-
-.loginBtn{
-	margin-top: 30px;
-	width: 620px;
-	height: 70px;
-	font-size: 20pt;
-	background-color: #525252;
-	color: #fff;
-	border: 3px solid #525252;
+	padding: 10px;
+	border: solid 2px #CFCFCF;
 	border-radius: 10px;
 }
-
-.loginBtn:hover{
-	background-color: rgba(0,0,0,0);
-	color:#525252;
-	transition-duration: 0.5s;
+#loginCookie{
+	margin-top: 10px;
+	color: #595959;
 }
-
-#signUpBox .loginBtn{
-	margin-bottom: 200px;
+#serchingId{
+	margin-top: 20px;
+	text-align: center;
+	font-size: 15pt;
+	color: #595959;
+}
+#serchingId:hover{
+	font-weight: bold;
+	text-decoration: underline;
+}
+.loginBtn{ 
+	width: 100%;
+	margin-top: 20px;
+	font-size: 15pt;
+	padding: 10px;
+	color: #fff;
+	border: solid 2px #595959;
+	background-color: #595959;
+	border-radius: 10px;
+}
+.loginBtn:hover{
+	color: #595959;
+	background-color: #fff;
+	transition-duration: 0.5s;
 }
 </style>
 </html>

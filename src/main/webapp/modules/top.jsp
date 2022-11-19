@@ -10,7 +10,7 @@
 <body>
 <header>
 	<div id="logo">
-		<img src="/22_web_project/rcs/logo.png" style="height: 70px;" onclick="location.href='/22_web_project/index.jsp'">
+		<img src="/22_web_project/rcs/logo.png" style="height: 90px;" onclick="location.href='/22_web_project/index.jsp'">
 	</div>
 	<div id="cart">
 		<ion-icon name="cart-outline" class="cartIcon"></ion-icon>
@@ -26,10 +26,12 @@
 	align-items: center;
 }
 .cartIcon{
-	font-size: 80px;
-	position: fixed;
-	top: 10px;
-	right: 30px;
+	position: absolute;
+	top: 10px; 
+	right: 10%;
+	z-index: 2; 
+	font-size: 90px; 
+	color: #595959;
 }	
 	
 </style>

@@ -11,6 +11,9 @@
 	<%@ include	file="/modules/top.jsp" %>
 	<%@ include	file="/modules/nav.jsp" %>
 	<main>
+	<div id="wrapper">
+		<div class="mainTitle">MYORDER</div>
+		<div class="mainSmallTitle">주문내역</div>
 		<div id="myOrderBox">
 			<div class="myOrderList">
 				<%@ include	file="/modules/myOrderList.jsp" %>			
@@ -22,13 +25,13 @@
 				<%@ include	file="/modules/myOrderList.jsp" %>			
 			</div>
 		</div>
+	</div>
 		<div class="push"></div>
 	</main>	
 	<%@ include	file="/modules/footer.jsp" %>
 </body>
 
 <style>
-
 #myOrderBox{
 	width: 100%;
 	margin: 30px 0 100px 0;
@@ -38,7 +41,7 @@
 	align-items: center;
 }
 .myOrderList{
-	width: 80%;
+	width: 90%;
 	border: 2px solid #ccc;
 	border-width: 0 0 2px 0;
 }

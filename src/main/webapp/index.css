@@ -3,27 +3,21 @@
 *{
 	margin: 0;
 }
-
 header{
-	height: 80px;
+	height: 110px;
 	margin-top: 10px;
 }
-
 main{
 	min-height: 100vh;
 	margin-bottom: -100px;
 }
-
-section{
-	width: 90%;
-	top: 80px;
+#wrapper{
+	width: 80%;
 	margin: auto;
 }
-
 .push{
 	height: 100px;
 }
-
 footer {
 	background-color: #D2DDE7;
 	height: 100px;
@@ -37,8 +31,23 @@ footer {
 	left: 0;
 	top: 0;
 	z-index: 1;
-	width: 400px;
+	width: 300px;
 	height: 100%;
 	margin: auto;
-	background-color: #344A59;
+	background-color: #D2DDE7;
+}
+.mainTitle{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30pt;
+	color: #595959;
+	margin-top: 30px;
+}
+.mainSmallTitle{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15pt;
+	color: #595959;
 }

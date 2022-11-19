@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
-	<ion-icon name="menu-outline" id ="openNavBtn" class="icon"></ion-icon>
-	<ion-icon name="close-outline" id ="closeNavBtn" class="icon" style="display: none; color: #fff;"></ion-icon>
+	<ion-icon name="menu-outline" id ="openNavBtn" class="topIcon"></ion-icon>
+	<ion-icon name="close-outline" id ="closeNavBtn" class="topIcon" style="display: none; color: #000; left: 20px;"></ion-icon>
 	<nav>
 		<div id="navi" style="display: none;">
 			<div id="signInBox" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
@@ -20,19 +20,19 @@
 			<ul id="category">
 				<li>
 					<div id="departmentBox">
-						<a href="#"><span style="font-size: 35pt;">전공서적</span></a>
+						<span style="font-size: 22pt;">전공서적</span>
 						<div id="departmentCa">
-							<div class="deparList"><a href="#">-기계공학부</a></div>
-							<div class="deparList"><a href="#">-로봇자동화공학부</a></div>
-							<div class="deparList"><a href="#">-전기전자통신공학부</a></div>
-							<div class="deparList"><a href="#">-컴퓨터공학부</a></div>
-							<div class="deparList"><a href="#">-생활환경공학부</a></div>
-							<div class="deparList"><a href="#">-경영학부</a></div>
+							<div class="deparList"><a href="/22_web_project/modules/shopMachinePage.jsp">-기계공학부</a></div>
+							<div class="deparList"><a href="/22_web_project/modules/shopRobotPage.jsp">-로봇자동화공학부</a></div>
+							<div class="deparList"><a href="/22_web_project/modules/shopElectrocityPage.jsp">-전기전자통신공학부</a></div>
+							<div class="deparList"><a href="/22_web_project/modules/shopComputerPage.jsp">-컴퓨터공학부</a></div>
+							<div class="deparList"><a href="/22_web_project/modules/shopEnvironmentPage.jsp">-생활환경공학부</a></div>
+							<div class="deparList"><a href="/22_web_project/modules/shopManagementPage.jsp">-경영학부</a></div>
 						</div>
 					</div>
 				</li>
-				<li><a href="#"><span style="font-size: 35pt;">교양서적</span></a></li>
-				<li><a href="#"><span style="font-size: 35pt;">학생중고거래</span></a></li>
+				<li><a href="/22_web_project/modules/shopGEclassPage.jsp"><span style="font-size: 22pt;">교양서적</span></a></li>
+				<li><a href="#"><span style="font-size: 22pt;">학생중고거래</span></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -42,12 +42,13 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 <style>
-.icon{
-	font-size: 80px;
-	position: fixed;
-	top: 10px;
-	left: 10px;
-	z-index: 2;
+.topIcon{
+	font-size: 90px;
+	position: absolute; 
+	top: 10px; 
+	left: 10%; 
+	z-index: 2; 
+	color: #595959;
 }	
 #signInBox{
 	margin: auto;
@@ -55,32 +56,34 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #fff;
-	font-size: 20pt;
-	border: 2px solid #fff;
-	width: 300px;
+	color: #000;
+	font-size: 18pt;
+	border: 2px solid #000;
+	width: 200px;
+	height: 40px;
 	padding: 10px;
 }
 #signInBox:hover{
+	border: 2px solid #fff;
 	background-color: #fff;
-	color: #344A59;
+	color: #D2DDE7;
 	transition-duration: 0.5s;
 }
 #category li{
+	color: #000;
 	list-style: none;
 	margin-top: 30px;
 }
 #category a{
-	color: #fff;
+	color: #000;
 	text-decoration: none;
 }
 
 #departmentCa{
 	display: none;
-	color: #fff;
 	margin-top: 10px;
 	margin-left: 10px;
-	font-size: 18pt;
+	font-size: 10pt;
 }
 #departmentBox:hover #departmentCa{
 	display: block;

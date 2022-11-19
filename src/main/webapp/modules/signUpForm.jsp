@@ -11,39 +11,38 @@
 	<%@ include	file="/modules/top.jsp" %>
 	<%@ include	file="/modules/nav.jsp" %>
 	<main>
-	<div id="signUp">
-		<div id="signUpBox">
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">아이디</div>
-				<input type="text" class="loginInputBox" name="memberid" placeholder="아이디를 입력하세요" >
+	<div id="wrapper">
+		<div class="mainTitle">SIGNUP</div>
+		<div class="mainSmallTitle">회원가입</div>
+		<div id="signUp">
+			<div class="signUpOne">
+				<div class="loginTitle">아이디</div>
+				<input type="text" class="signUpInputBox" name="memberid" placeholder="아이디를 입력하세요" >
 			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">비밀번호</div>
-				<input type="text" class="loginInputBox" name="memberpw" placeholder="비밀번호를 입력하세요">
+			<div class="signUpOne">
+				<div class="loginTitle">비밀번호</div>
+				<input type="text" class="signUpInputBox" name="memberpw" placeholder="비밀번호를 입력하세요">
 			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">비밀번호 확인</div>
-				<input type="text" class="loginInputBox" name="memberpw2" placeholder="비밀번호를 다시 입력하세요" >
+			<div class="signUpOne">
+				<div class="loginTitle">이름</div>
+				<input type="text" class="signUpInputBox" name="membername" placeholder="이름을 입력하세요">
 			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">이름</div>
-				<input type="text" class="loginInputBox" name="membername" placeholder="이름을 입력하세요">
+			<div class="signUpOne">
+				<div class="loginTitle">이메일</div>
+				<input type="text" class="signUpInputBox" name="memberpwemail" placeholder="이메일을 입력하세요">
 			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">이메일</div>
-				<input type="text" class="loginInputBox" name="memberemail" placeholder="이메일울 입력하세요">
+			<div class="signUpOne">
+				<div class="loginTitle">전화번호</div>
+				<input type="text" class="signUpInputBox" name="memberpwphone" placeholder="전화번호를 입력하세요">
 			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">전화번호</div>
-				<input type="text" class="loginInputBox" name="memberphone" placeholder="전화번호를 입력하세요">
+			<div class="signUpOne">
+				<div class="loginTitle">주소</div>
+				<input type="text" class="signUpInputBox" name="memberpwaddress" placeholder="주소를 입력하세요">
 			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">주소</div>
-				<input type="text" class="loginInputBox" name="memberaddress" placeholder="주소를 입력하세요">
-			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">학과</div>
-				<select name="choicedepartment" class="loginInputBox">
+			<div class="signUpOne">
+				<div class="loginTitle">학과</div>
+				<select name="choicedepartment" class="signUpInputBox">
+					<option value="" disabled selected>학과를 선택하세요</option>
   					<option value="기계공학과">기계공학과</option>
   					<option value="기계설계공학과">기계설계공학과</option>
   					<option value="로봇공학과">로봇공학과</option>
@@ -69,20 +68,22 @@
   					<option value="빅데이터경영과">빅데이터경영과</option>
 				</select>
 			</div>
-			<div class="signUpBigOne">
-				<div class="signUpBigTxt">학년</div>
-				<select name="choicegrade" class="loginInputBox">
+			<div class="signUpOne">
+				<div class="loginTitle">학년</div>
+				<select name="choicegrade" class="signUpInputBox">
+					<option value="" disabled selected>학년을 선택하세요</option>
   					<option value="1">1학년</option>
   					<option value="2">2학년</option>
   					<option value="3">3학년</option>
 				</select>
 			</div>
-			<div id="acceptOne">
-				<input type="checkbox" name="acceptBox">약관에 동의합니다.
+			<div id="signUpAccpet">
+				<input type="checkbox">약관에 동의하시겠습니까?
 			</div>
-			<input type="submit" value="다음으로" name="signUpInputBox" class="loginBtn">
+			<input type="submit" class="signUpBtn" value="회원가입 하러가기">
 		</div>
 	</div>
+	<div class="push"></div>
 	</main>	
 	<%@ include	file="/modules/footer.jsp" %>
 </body>
@@ -90,55 +91,58 @@
 <style>
 
 #signUp{
-	margin-top: 50px;
+	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 }
-.signUpBigTxt{
-	margin-top: 40px;
-	font-size: 30pt;
-	font-weight: bold;
-	color: #000;
-}
-.loginInputBox{
-	width: 600px;
-	margin-top: 10px;
-	font-size: 20pt;
-	padding: 10px;
-	border: 2px soild #ddd;
-	border-radius: 10px;	
-}
-#signUpBox .loginBtn{
-	margin-top: 80px;
-}
-
-.loginBtn{
+.signUpOne{
 	margin-top: 30px;
+	text-align: left;
+}
+.loginTitle{
+	color: #595959;
+	font-size: 30pt;
+}
+.signUpInputBox{ 
 	width: 620px;
-	height: 70px;
-	font-size: 20pt;
-	background-color: #525252;
-	color: #fff;
-	border: 3px solid #525252;
+	padding: 10px;
+	margin-top: 10px;
+	font-size: 15pt;
+	border: solid 2px #CFCFCF;
 	border-radius: 10px;
 }
-
-.loginBtn:hover{
-	background-color: rgba(0,0,0,0);
-	color:#525252;
-	transition-duration: 0.5s;
-}
-
-#signUpBox .loginBtn{
-	margin-bottom: 200px;
-}
-
-#acceptOne{
-	margin-top: 30px;
+.signUpInputBox[type="text"] { 
+	width: 600px;
+	margin-top: 10px;
 	font-size: 15pt;
+	padding: 10px;
+	border: solid 2px #CFCFCF;
+	border-radius: 10px;
+}
+#signUpAccpet{
+	margin-top: 30pt;
+	display: flex;
+	text-align: left;
+	color: #595959;
+	font-size: 15pt;
+}
+.signUpBtn{ 
+	width:620px;
+	margin-top: 50px;
+	margin-bottom: 150px;
+	font-size: 15pt;
+	padding: 10px;
+	color: #fff;
+	border: solid 2px #595959;
+	background-color: #595959;
+	border-radius: 10px;
+}
+.signUpBtn:hover{
+	color: #595959;
+	background-color: #fff;
+	transition-duration: 0.5s;
 }
 </style>
 </html>
