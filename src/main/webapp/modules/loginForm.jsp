@@ -12,21 +12,21 @@
 	<%@ include	file="/modules/nav.jsp" %>
 	<main>
 		<div id="wrapper">
-			<div class="mainTitle">LOGIN</div>
-			<div class="mainSmallTitle">로그인</div>
 			<div id="loginBox">
 				<div id="loginTwoBox">
 					<div class="loginOneBox">
 						<div class="loginFormBox">
-							<div class="loginTitle">아이디</div>
-							<input type="text" class="loginInputBox" name="memberid" placeholder="아이디를 입력해주세요">
-							<div class="loginTitle">비밀번호</div>
-							<input type="text" class="loginInputBox" name="memberpw" placeholder="비밀번호를 입력해주세요">
-							<div id="loginCookie">
-								<input type="checkbox">로그인 정보 기억하기
-							</div>
-							<div id="serchingId">만약 아이디/비밀번호를 까먹었다면?</div>
-							<input type="submit" class="loginBtn" value="로그인">
+							<form action="./jsp/loginProcess.jsp" method="post">
+								<div class="loginTitle">아이디</div>
+								<input type="text" class="loginInputBox" name="memberid" placeholder="아이디를 입력해주세요">
+								<div class="loginTitle">비밀번호</div>
+								<input type="text" class="loginInputBox" name="memberpw" placeholder="비밀번호를 입력해주세요">
+								<div id="loginCookie">
+									<input type="checkbox">로그인 정보 기억하기
+								</div>
+								<div id="serchingId">만약 아이디/비밀번호를 까먹었다면?</div>
+							<input type="submit" class="loginBtn" value="로그인">	
+							</form>	
 						</div>
 						
 					</div>

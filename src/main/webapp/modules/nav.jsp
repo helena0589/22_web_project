@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+	String loginCheck = (String)session.getAttribute("memberChecked");
+	String loginName = (String)session.getAttribute("memberName");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +13,27 @@
 <link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
-	<ion-icon name="menu-outline" id ="openNavBtn" class="topIcon"></ion-icon>
-	<ion-icon name="close-outline" id ="closeNavBtn" class="topIcon" style="display: none; color: #000; left: 20px;"></ion-icon>
+	<ion-icon name="menu-outline" id ="openNavBtn" ></ion-icon>
+	<ion-icon name="close-outline" id ="closeNavBtn" ></ion-icon>
 	<nav>
 		<div id="navi" style="display: none;">
+<% 
+	if(loginCheck == null){
+%>		
 			<div id="signInBox" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
 				<ion-icon name="lock-closed" class="signInTxt"></ion-icon>
 				<div class="signInTxt">Login Page</div>
 			</div>
+<%
+	}else{
+%>
+			<div id="signInBox" onclick="location.href='/22_web_project/modules/myPage.jsp'">
+				<ion-icon name="person" class="signInTxt"></ion-icon>
+				<div class="signInTxt" style="margin-left: 10px;">00 님</div>
+			</div>
+<%
+	}
+%>
 			<ul id="category">
 				<li>
 					<div id="departmentBox">
@@ -42,13 +59,22 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 <style>
-.topIcon{
+#openNavBtn{
 	font-size: 90px;
 	position: absolute; 
 	top: 10px; 
 	left: 10%; 
 	z-index: 2; 
 	color: #595959;
+}
+#closeNavBtn{
+	font-size: 90px;
+	position: fixed; 
+	top: 10px; 
+	left: 20px; 
+	z-index: 2; 
+	color: #000;
+	display: none;
 }	
 #signInBox{
 	margin: auto;

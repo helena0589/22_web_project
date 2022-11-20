@@ -37,9 +37,11 @@
 				<div class="myPageSmallTxt">주문내역</div>
 			</div>
 		</div>
-		<div id="logout">
-			<input type="submit" class="logoutBtn" value="LogOut">
-		</div>
+		<form action = "/22_web_project/modules/jsp/logout.jsp" method="post">
+			<div id="logout">
+				<input type="submit" class="logoutBtn" value="LogOut">
+			</div>
+		</form>
 	</div>
 		<div class="push"></div>
 	</main>	

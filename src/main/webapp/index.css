@@ -16,11 +16,11 @@ main{
 	margin: auto;
 }
 .push{
-	height: 100px;
+	height: 300px;
 }
 footer {
 	background-color: #D2DDE7;
-	height: 100px;
+	height: 300px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
