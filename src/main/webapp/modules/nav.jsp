@@ -3,6 +3,7 @@
 <% 
 	String loginCheck = (String)session.getAttribute("memberChecked");
 	String loginName = (String)session.getAttribute("memberName");
+	String adminCheck = (String)session.getAttribute("adminChecked");
 %>
 <!DOCTYPE html>
 <html>
@@ -18,18 +19,26 @@
 	<nav>
 		<div id="navi" style="display: none;">
 <% 
-	if(loginCheck == null){
-%>		
-			<div id="signInBox" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
-				<ion-icon name="lock-closed" class="signInTxt"></ion-icon>
-				<div class="signInTxt">Login Page</div>
+	if(loginCheck != null){
+%>			
+			<div id="signInBox" onclick="location.href='/22_web_project/modules/myPage.jsp'">
+				<ion-icon name="person" class="signInTxt"></ion-icon>
+				<div class="signInTxt" style="margin-left: 10px;">00 님</div>
+			</div>
+<%
+	}else if(adminCheck != null){
+%>
+			<div id="signInBox" onclick="location.href='/22_web_project/modules/myPage.jsp'">
+				<ion-icon name="person" class="signInTxt"></ion-icon>
+				<div class="signInTxt" style="margin-left: 10px;">관리자 님</div>
 			</div>
 <%
 	}else{
 %>
-			<div id="signInBox" onclick="location.href='/22_web_project/modules/myPage.jsp'">
-				<ion-icon name="person" class="signInTxt"></ion-icon>
-				<div class="signInTxt" style="margin-left: 10px;">00 님</div>
+			
+			<div id="signInBox" onclick="location.href='/22_web_project/modules/loginForm.jsp'">
+				<ion-icon name="lock-closed" class="signInTxt"></ion-icon>
+				<div class="signInTxt">Login Page</div>
 			</div>
 <%
 	}

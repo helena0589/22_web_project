@@ -3,5 +3,6 @@
 <!DOCTYPE html>
 <% 
 	session.removeAttribute("memberChecked");
+	session.removeAttribute("adminChecked");
 	response.sendRedirect("/22_web_project/index.jsp");
 %>

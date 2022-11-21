@@ -8,7 +8,12 @@
 		session.setAttribute("memberChecked", "ok");
 		session.setAttribute("memberName", id);
 		response.sendRedirect("/22_web_project/index.jsp");
-	} else{
+	} else if ( id.equals("admin0000") && password.equals("123456789*")) {
+		//어드민 로그인 성공
+		session.setAttribute("adminChecked", "ok");
+		session.setAttribute("memberName", id);
+		response.sendRedirect("/22_web_project/index.jsp");	
+	}else{
 %>
 		<script>
 			alert("아이디나 비밀번호가 틀렸습니다.");
@@ -19,3 +24,6 @@
 
 	}
 %>
+
+
+

@@ -14,12 +14,9 @@
 	<div id="wrapper">
 		<img src="/22_web_project/rcs/indexImg.png" id="indexMainImg">
 <%
-	if(loginCheck == null){
-%>
-<% 
-	}else{
-%>
-		<div id="indexRecommendMemberPage">
+	if(loginCheck != null){
+%>	
+	<div id="indexRecommendMemberPage">
 			<div class="mainTitle">BOOKS</div>
 			<div class="mainSmallTitle">추천서적</div>
 			<div class="indexBookList">
@@ -43,6 +40,10 @@
 			</div>
 			<p style="font-size: 10pt; color: #9C9C9C; text-align: right; margin-right: 80px;">※추천서적은 학과, 학년에 따라 맞춤으로 제공됩니다.</p>
 		</div>
+<% 
+	}else{
+%>
+		
 <% 
 	}
 %>	
