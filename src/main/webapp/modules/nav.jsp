@@ -58,7 +58,7 @@
 					</div>
 				</li>
 				<li><a href="/22_web_project/modules/shopGEclassPage.jsp"><span style="font-size: 22pt;">교양서적</span></a></li>
-				<li><a href="#"><span style="font-size: 22pt;">학생중고거래</span></a></li>
+				<li><a href="/22_web_project/modules/junggoPage.jsp"><span style="font-size: 22pt;">학생중고거래</span></a></li>
 			</ul>
 		</div>
 	</nav>

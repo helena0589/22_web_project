@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>기계공학부</title>
+<title>학생중고계시판</title>
 <link rel="stylesheet" href="/22_web_project/index.css">
 </head>
 <body>
@@ -13,6 +13,15 @@
 	<main>
 	<div id="wrapper">
 		<div class="mainTitle" style="margin-bottom: 70px;">기계공학부</div>
+<%
+	if(adminCheck != null){ 
+%>
+		<div class="adminBtn">
+			<input type="button" class="addBookBtn" value="책 추가">
+		</div>
+<%
+	}
+%>		
 		<div class="shoppingList">
 			<div class="shoppingOne" onclick="location.href='/22_web_project/modules/bookPage/sampleBook1.jsp'">
 				<div class="shoppingBookImgBox">
@@ -119,6 +128,27 @@
 }
 .shoppingPush{
 	height: 100px;
+}
+.adminBtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.addBookBtn{ 
+	width: 30%;
+	margin-top: 30px;
+	height: 20%;
+	font-size: 15pt;
+	padding: 10px;
+	color: #fff;
+	border: solid 2px #595959;
+	background-color: #595959;
+	border-radius: 10px;
+}
+.addBookBtn:hover{
+	color: #595959;
+	background-color: #fff;
+	transition-duration: 0.5s;
 }
 </style>
 </html>

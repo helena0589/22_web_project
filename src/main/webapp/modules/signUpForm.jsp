@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
 <link rel="stylesheet" href="/22_web_project/index.css">
+<script src="/22_web_project/js/jquery-3.6.1.js"></script>
 </head>
 <body>
 	<%@ include	file="/modules/top.jsp" %>
@@ -13,31 +15,53 @@
 	<main>
 	<div id="wrapper">
 		<div class="mainTitle">SIGNUP</div>
-		<div class="mainSmallTitle">회원가입</div>
-		<div id="signUp">
-			<div class="signUpOne">
-				<div class="loginTitle">아이디</div>
-				<input type="text" class="signUpInputBox" name="memberid" placeholder="아이디를 입력하세요" >
+		<div class="mainSmallTitle">회원가입</div>	
+		<form method="post" action="/22_web_project/insert.do" id="signUpForm" name="signUpForm" onsubmit="return submitSignUp()">
+		<div id="loginBox">
+			<div class="loginTwoBox">
+				<div class="loginOne">
+					<div class="loginTxt">*아이디</div>
+					<input type="text" id="memberid" name="memberid" class="loginInputTxt" onkeydown="inputIdChk()" placeholder="영문, 한글 4~20자리">
+					<input type="button" value="중복확인" name="dbCheckId" class="loginIdBtn" onclick="checkIdAlreadyExist()">
+					<input type="hidden" id="DuplicateId" name="DuplicateId" value="notCheckId">
 			</div>
-			<div class="signUpOne">
-				<div class="loginTitle">비밀번호</div>
-				<input type="text" class="signUpInputBox" name="memberpw" placeholder="비밀번호를 입력하세요">
+				<div class="alertTxt" id="alertIdAlreadyCheck" style="color: red; display: none;">아이디 중복체크를 해주세요</div>
+				<div class="alertTxt" id="alertIdCheck">유효하지 않은 아이디값입니다</div>
 			</div>
-			<div class="signUpOne">
-				<div class="loginTitle">이름</div>
-				<input type="text" class="signUpInputBox" name="membername" placeholder="이름을 입력하세요">
+			<div class="loginTwoBox">
+				<div class="loginOne">
+					<div class="loginTxt">*비밀번호</div>
+					<input type="text" id="memberpw" name="memberpw" class="loginInputTxt" onkeydown="inputPwChk()" placeholder="영문, 한글 4~20자리">
+				</div>
+				<div class="alertTxt" id="alertPwCheck">유효하지 않은 비밀번호 값입니다</div>
 			</div>
-			<div class="signUpOne">
-				<div class="loginTitle">이메일</div>
-				<input type="text" class="signUpInputBox" name="memberpwemail" placeholder="이메일을 입력하세요">
+			<div class="loginTwoBox">
+				<div class="loginOne">
+					<div class="loginTxt">*이름</div>
+					<input type="text" id="membername" name="membername" class="loginInputTxt" placeholder="한글, 영문만 가능">
+				</div>
+				<div class="alertTxt" id="alertNameCheck">유효하지 않은 이름입니다</div>
 			</div>
-			<div class="signUpOne">
-				<div class="loginTitle">전화번호</div>
-				<input type="text" class="signUpInputBox" name="memberpwphone" placeholder="전화번호를 입력하세요">
+			<div class="loginTwoBox">
+				<div class="loginOne">
+					<div class="loginTxt">*이메일</div>
+					<input type="text" id="memberemail" name="memberemail" class="loginInputTxt" placeholder="dongyanh@ac.kr">
+				</div>
+				<div class="alertTxt" id="alertEmailCheck">유효하지 않은 이메일입니다</div>
 			</div>
-			<div class="signUpOne">
-				<div class="loginTitle">주소</div>
-				<input type="text" class="signUpInputBox" name="memberpwaddress" placeholder="주소를 입력하세요">
+			<div class="loginTwoBox">
+				<div class="loginOne">
+					<div class="loginTxt">*전화번호</div>
+					<input type="text" id="memberphone" name="memberphone" class="loginInputTxt" placeholder="특수문자 없이 숫자만">
+				</div>
+				<div class="alertTxt" id="alertPhoneCheck">유효하지 않은 전화번호입니다</div>
+			</div>
+			<div class="loginTwoBox">
+				<div class="loginOne">
+					<div class="loginTxt">주소</div>
+					<input type="text" id="memberaddress" name="memberaddress" class="loginInputTxt" placeholder="100자 이내로">
+				</div>
+				<div class="alertTxt" id="alertAddressCheck">유효하지 않은 주소입니다</div>
 			</div>
 			<div class="signUpOne">
 				<div class="loginTitle">학과</div>
@@ -78,10 +102,12 @@
 				</select>
 			</div>
 			<div id="signUpAccpet">
-				<input type="checkbox">약관에 동의하시겠습니까?
+				<input type="checkbox" id="checkRule">약관에 동의하시겠습니까?
+				<input type="hidden" name="notNullRule" value="unNullRule">
 			</div>
-			<input type="submit" class="signUpBtn" value="회원가입 하러가기">
+			<input type="submit" value="회원정보 제출하기" id="signUpSubmitBtn">
 		</div>
+	</form>	
 	</div>
 	<div class="push"></div>
 	</main>	
@@ -89,60 +115,116 @@
 </body>
 
 <style>
-
-#signUp{
-	margin-top: 30px;
+#loginBox{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-.signUpOne{
-	margin-top: 30px;
-	text-align: left;
-}
-.loginTitle{
-	color: #595959;
-	font-size: 30pt;
-}
-.signUpInputBox{ 
-	width: 620px;
-	padding: 10px;
+.loginOne{
 	margin-top: 10px;
-	font-size: 15pt;
-	border: solid 2px #CFCFCF;
-	border-radius: 10px;
-}
-.signUpInputBox[type="text"] { 
-	width: 600px;
-	margin-top: 10px;
-	font-size: 15pt;
-	padding: 10px;
-	border: solid 2px #CFCFCF;
-	border-radius: 10px;
-}
-#signUpAccpet{
-	margin-top: 30pt;
 	display: flex;
-	text-align: left;
-	color: #595959;
-	font-size: 15pt;
+	overflow: hidden;
 }
-.signUpBtn{ 
-	width:620px;
-	margin-top: 50px;
-	margin-bottom: 150px;
-	font-size: 15pt;
-	padding: 10px;
-	color: #fff;
-	border: solid 2px #595959;
-	background-color: #595959;
-	border-radius: 10px;
+.loginTxt{
+
 }
-.signUpBtn:hover{
-	color: #595959;
-	background-color: #fff;
-	transition-duration: 0.5s;
+#signUpSubmitBtn{
+	margin-top: 10px;
+}
+.alertTxt{
+	display: none;
+	color: red;
 }
 </style>
 </html>
+<script>
+
+
+
+
+function checkIdAlreadyExist(){
+	window.name = "checkIdForm"
+	window.open("checkIdForm.jsp", "chkForm", "width=500, height=300, resizable=no, scrollbars=no")
+}
+
+function inputIdChk(){
+	document.getElementById("DuplicateId").value = "notCheckId"
+}
+
+function submitSignUp(){
+	let rule = document.getElementById("checkRule").checked
+	let alreadyid = document.getElementById("DuplicateId").value
+	let id = document.getElementById("memberid").value
+	let password = document.getElementById("memberpw").value
+	let name= document.getElementById("membername").value
+	let email= document.getElementById("memberemail").value
+	let phone = document.getElementById("memberphone").value
+	let address = document.getElementById("memberaddress").value
+	
+	const reIdPw =  new RegExp('^[a-z0-9_]{4,20}$') //아이디, 비밀번호는 알파벳&숫자&특수문자,4~20자리
+	const reName = new RegExp('^[가-힣|a-z|A-Z|]+$') //이름 알파벳&한글
+	const reEmail = new RegExp('^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$','i')//이메일 알파벳&숫자&특수문자@알파벳&숫자&특수문자
+	const rePhone = new RegExp('^[0-9]{9,11}$')//전화번호 숫자, 9~11자리
+	
+	if(alreadyid != "checkId"){
+		document.getElementById("alertIdAlreadyCheck").style.display = "block"
+		$('#memberid').focus()
+		return false
+	} else if(!reIdPw.test(id)){
+		document.getElementById("alertIdAlreadyCheck").style.display = "none"
+		document.getElementById("alertIdCheck").style.display = "block"
+		$('#memberid').focus()
+		return false
+	} else if(!reIdPw.test(password)) {
+		document.getElementById("alertIdAlreadyCheck").style.display = "none"
+		document.getElementById("alertIdCheck").style.display = "none"
+		document.getElementById("alertPwCheck").style.display = "block"
+		$('#memberpw').focus()
+		return false
+	}else if(!reName.test(name)){
+		document.getElementById("alertIdAlreadyCheck").style.display = "none"
+		document.getElementById("alertIdCheck").style.display = "none"
+		document.getElementById("alertPwCheck").style.display = "none"
+		document.getElementById("alertNameCheck").style.display = "block"
+		$('#membername').focus()	
+		return false
+	}else if(!reEmail.test(email)) {
+		document.getElementById("alertIdAlreadyCheck").style.display = "none"
+		document.getElementById("alertIdCheck").style.display = "none"
+		document.getElementById("alertPwCheck").style.display = "none"
+		document.getElementById("alertNameCheck").style.display = "none"
+		document.getElementById("alertEmailCheck").style.display = "block"
+		$('#memberemail').focus()
+		return false
+	}else if(!rePhone.test(phone)) {
+		document.getElementById("alertIdAlreadyCheck").style.display = "none"
+		document.getElementById("alertIdCheck").style.display = "none"
+		document.getElementById("alertPwCheck").style.display = "none"
+		document.getElementById("alertNameCheck").style.display = "none"
+		document.getElementById("alertEmailCheck").style.display = "none"
+		document.getElementById("alertPhoneCheck").style.display = "block"
+		$('#memberphone').focus()
+		return false
+	}else if(address.length > 100){ //주소 0~100
+		document.getElementById("alertIdAlreadyCheck").style.display = "none"
+		document.getElementById("alertIdCheck").style.display = "none"
+		document.getElementById("alertPwCheck").style.display = "none"
+		document.getElementById("alertNameCheck").style.display = "none"
+		document.getElementById("alertEmailCheck").style.display = "none"
+		document.getElementById("alertPhoneCheck").style.display = "none"
+		document.getElementById("alertAddressCheck").style.display = "block"
+		return false
+	}else if(!rule) {
+		document.getElementById("alertIdAlreadyCheck").style.display = "none"
+		document.getElementById("alertIdCheck").style.display = "none"
+		document.getElementById("alertPwCheck").style.display = "none"
+		document.getElementById("alertNameCheck").style.display = "none"
+		document.getElementById("alertEmailCheck").style.display = "none"
+		document.getElementById("alertPhoneCheck").style.display = "none"
+		document.getElementById("alertAddressCheck").style.display = "none"
+		alert("약관에 동의하지 않으면 회원가입을 하실 수 없습니다")
+		return false
+	}
+}
+</script>

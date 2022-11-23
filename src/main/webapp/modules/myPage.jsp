@@ -13,6 +13,9 @@
 	<div id="wrapper">
 		<div class="mainTitle">MYPAGE</div>
 		<div class="mainSmallTitle">회원정보</div>
+<% 
+	if(loginCheck != null){
+%>
 		<div class="myPageTwoBox">
 			<div class="myPageOneBox" onclick="location.href='/22_web_project/modules/myProfile.jsp'">
 				<ion-icon name="person-outline" class="myPageIcon"></ion-icon>
@@ -25,6 +28,9 @@
 				<div class="myPageSmallTxt">주문내역</div>
 			</div>
 		</div>
+<% 
+	}else if(adminCheck != null){
+%>	
 		<div class="myPageTwoBox">
 				<div class="myPageOneBox" onclick="location.href='/22_web_project/modules/myProfile.jsp'">
 				<ion-icon name="people-outline" class="myPageIcon"></ion-icon>
@@ -37,6 +43,9 @@
 				<div class="myPageSmallTxt">주문내역</div>
 			</div>
 		</div>
+<% 
+	}
+%>
 		<form action = "/22_web_project/modules/jsp/logout.jsp" method="post">
 			<div id="logout">
 				<input type="submit" class="logoutBtn" value="LogOut">
